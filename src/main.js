@@ -276,7 +276,7 @@ if (run) {
       }).catch(function(e){alert(e + 'Send Tx'); run = false})  
     })
   })
-}
+
 
 if (run) {
   var mes = `${toAmount/1e8} &rArr; <a target="blank" href="https://explorer.bglnode.online/address/${toAddress}">${toAddress}</a>`
@@ -287,5 +287,5 @@ setTimeout(() => {
   document.getElementById('txs').innerHTML = str;
   getBalance();
 }, 5000)
-
+}
 }
