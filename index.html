@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bitgesell Snap</title>
+    <link rel="icon" type="image/svg" href="./images/icon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style type="text/css">
+      body { background:#f0eeff; color:#8c55ff; margin:0; padding:0; font-family:'VT323', monospace; }
+      #page { width:100vw; height:100vh; display:flex; flex-direction: column; justify-content:center; align-items:center;}
+      #content { max-width:30rem; padding:18px; border:0 solid #8c55ff; border-radius:2px; }
+      h1, p, input, button { font-size:1.5rem; font-weight:400; font-family:inherit; }
+      a, a:visited, a:focus { color:#8c55ff; }
+      input { font-size:1.2rem; background-color:#f0eeff; color:#8c55ff; border-width:0 0 1px 0; border-color:#8c55ff; padding-bottom:2px; outline:none; }
+      #addressInput { width:24rem; }
+      button { background-color:#f0eeff; color:#8c55ff; border:1px solid #8c55ff; border-radius:2px; padding:3px 6px; cursor:pointer; }
+      button:active { border-color:#8c55ff; color:#8c55ff; }
+      .connected, #unavailable { display:none; }
+      #balance {color:#ff5581}
+    </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./src/jsbgl.min.js"></script>
+  </head>
+
+  <body>
+    <div id="page">
+      <h2 class="disconnected">Bitgesell Snap</h2>
+      <div id="content">
+        <button class="disconnected" id="connect">Start</button>
+        <h1 class="connected"><span id="fox"></span></h1>
+        <h1 class="connected">Balance: <span id="balance"></span> BGL</h1>
+        <p class="connected">&rsaquo; <input type="text" name="address" id="addressInput" value="" placeholder="bgl..."></p>
+        <p class="connected">&rsaquo; <input type="text" name="amount" id="amountInput" value="" placeholder="0.0" > <button id="max">Max</button><span style = "font-size: 1rem;"> Fee: 0.0001</span></p>
+        <p class="connected"><button id="send">Send</button></p>
+        <h1 class="connected"><span style = "font-size: 1rem;" id="txs"></span></h1>
+        <p id="unavailable"><span id="dis">Disable MetaMask.</span> You need MetaMask Flask to use this dapp.<br><a href="https://metamask.io/flask/">Get MetaMask Flask</a></p>
+      </div>
+    </div>
+  </body>  
+  <script src="./src/main.js"></script>
+</html>
