@@ -5,13 +5,13 @@ async function checkFlask() {
         method: 'wallet_enable',
         params: [{}]
       })
-    } catch (e) { 
+    } catch (e) {
+    if (e.code != -32602) {
       document.getElementById('connect').style.display = 'none'; 
       document.getElementById('content').style.borderWidth = '1px'; 
       document.getElementById('unavailable').style.display = 'block';
-    if (window.ethereum==undefined) { 
-      document.getElementById('dis').style.display = 'none' ;
-      } 
+      if (window.ethereum==undefined) {document.getElementById('dis').style.display = 'none';}
+    }
     }
 }
     const fee = 10000;
