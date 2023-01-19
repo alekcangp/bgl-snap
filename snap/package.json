@@ -1,0 +1,24 @@
+{
+  "name": "bgl-snap",
+  "version": "1.0.0",
+  "description": "A MetaMask Snap for Bitgesell network.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alekcangp/bgl-snap.git"
+  },
+  "keywords": [
+    "Bitgesell",
+    "BGL"
+  ],
+  "main": "src/index.js",
+  "files": [
+    "dist/",
+    "images/",
+    "snap.manifest.json"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alekcangp",
+  "license": "ISC"
+}

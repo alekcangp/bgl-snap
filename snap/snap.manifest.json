@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "description": "A MetaMask Snap for Bitgesell network.",
+  "proposedName": "bgl-snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alekcangp/bgl-snap.git"
+  },
+  "source": {
+    "shasum": "pZ7rZBPPve7/HKA+ErhJa64VvPyjL/uow3Ji6WXaUkI=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "bgl-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_notify": {},
+    "snap_confirm": {},
+    "snap_getBip44Entropy": [
+      {
+        "coinType": 0
+      }
+    ]
+  },
+  "manifestVersion": "0.1"
+}
