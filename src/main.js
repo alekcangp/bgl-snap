@@ -15,7 +15,7 @@ async function checkFlask() {
     }
 }
     const fee = 10000;
-    const snapId = `npm:snap-bgl`;
+    const snapId = `npm:bgl-snap`;
     const connectButton = document.getElementById('connect')
     const queryAddress = document.getElementById('addressInput');
     const queryAmount = document.getElementById('amountInput');
@@ -47,7 +47,7 @@ async function checkFlask() {
       const result = await ethereum.request({
         method: 'wallet_enable',
         params: [{
-          wallet_snap: { [snapId]: {version:'1.0.2'} },
+          wallet_snap: { [snapId]: {} },
         }]
       })
 
