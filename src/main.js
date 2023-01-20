@@ -260,9 +260,9 @@ async function sendTx() {
 run = true;
 document.getElementById('send').disabled = true;	
 await getBalance();
-await checkForm();
-if (run) await getConfirm();
-if (run) await getAddressUtxo(); // get confirmed and unconfirmed outs
+if (run) await checkForm()
+if (run) await getConfirm()
+if (run) await getAddressUtxo() // get confirmed and unconfirmed outs
 if (run) await generateTransaction() // generate and sign tx
 if (run) await post()
 var txid;
