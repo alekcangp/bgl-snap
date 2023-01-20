@@ -143,7 +143,7 @@ function getBalance() {
   axios.get(url).then(function(res) {
     BALANCE = res.data.data.balance + res.data.data.pendingReceivedAmount - res.data.data.pendingSentAmount ;
     document.getElementById("balance").innerHTML = `${(BALANCE / 1e8)}`
-  }).catch(function(e) {alert(e)})
+  }).catch(function(e) {alert(e); run = false})
 }
 
 ////////////////////////////////////
@@ -258,13 +258,16 @@ function generateTransaction() {
 
 async function sendTx() {
 run = true;
+document.getElementById('send').disabled = true;	
+await getBalance();
 await checkForm();
 if (run) await getConfirm();
 if (run) await getAddressUtxo(); // get confirmed and unconfirmed outs
 if (run) await generateTransaction() // generate and sign tx
-if (run) {
- var txid;
- document.getElementById('txs').innerText = 'Sending...'
+if (run) await post()
+var txid;
+async function post() {
+ document.getElementById('txs').innerText = 'Processing...'
  await axios.post("https://explorer.bglnode.online/api/v1/tx", `${newTx}`).then(function(res){
   txid = res.data; 
   }).catch(function(e){  
@@ -276,16 +279,17 @@ if (run) {
       }).catch(function(e){alert(e + 'Send Tx'); run = false})  
     })
   })
-
+}
 
 if (run) {
   var mes = `${toAmount/1e8} &rArr; <a target="blank" href="https://explorer.bglnode.online/address/${toAddress}">${toAddress}</a>`
   var str = `${mes} <a target="blank" href="https://explorer.bglnode.online/tx/${txid}">&equiv;</a>`
-  getNotify(`Sent ${toAmount/1e8} BGL`);
+  getNotify(`Sent ${toAmount/1e8} BGL ${toAddress.slice(0,20)}...`);
 } else {str = ""}
 setTimeout(() => {
   document.getElementById('txs').innerHTML = str;
+  document.getElementById('send').disabled = false;
   getBalance();
-}, 5000)
+}, 7000)
 }
 }
