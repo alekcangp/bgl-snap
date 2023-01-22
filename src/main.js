@@ -261,14 +261,16 @@ run = true;
 document.getElementById('send').disabled = true;	
 await getBalance();
 if (run) await checkForm()
-if (run) await getConfirm()
-document.getElementById('txs').innerText = 'Processing...'
+if (run) {
+	await getConfirm();
+	document.getElementById('txs').innerText = 'Processing...'
+}
 if (run) await getAddressUtxo() // get confirmed and unconfirmed outs
 if (run) await generateTransaction() // generate and sign tx
 if (run) await post()
 var txid;
 async function post() {
- 
+ document.getElementById('txs').innerText = 'Sending...'
  await axios.post("https://explorer.bglnode.online/api/v1/tx", `${newTx}`).then(function(res){
   txid = res.data; 
   }).catch(function(e){  
