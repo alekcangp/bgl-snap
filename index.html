@@ -19,13 +19,24 @@
       .connected, #unavailable { display:none; }
       #balance {color:#ff5581}
     </style>
+    <link rel="stylesheet" type="text/css" href="./css/logo.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./src/jsbgl.min.js"></script>
   </head>
 
   <body>
     <div id="page">
-      <h2 class="disconnected">Bitgesell Snap</h2>
+     <div class="disconnected">
+
+        <div class="card">
+          <div class="wrapper">
+            <img src="./images/4.png" class="cover-image" />
+          </div>
+          <img src="./images/5.png" class="title" />
+          <img src="./images/3.png" class="character" />
+        </div>
+
+      </div>
       <div id="content">
         <button class="disconnected" id="connect">Start</button>
         <h1 class="connected"><span id="fox"></span></h1>
