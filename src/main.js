@@ -143,7 +143,7 @@ function getBalance() {
   axios.get(url).then(function(res) {
     BALANCE = res.data.data.balance + res.data.data.pendingReceivedAmount - res.data.data.pendingSentAmount ;
     document.getElementById("balance").innerHTML = `${(BALANCE / 1e8)}`
-  }).catch(function(e) {alert(e); run = false})
+  }).catch(function(e) { run = false})
 }
 
 ////////////////////////////////////
@@ -293,6 +293,6 @@ setTimeout(() => {
   document.getElementById('txs').innerHTML = str;
   document.getElementById('send').disabled = false;
   getBalance();
-}, 7000)
+}, (run) ? 7000 : 1000)
 }
 
