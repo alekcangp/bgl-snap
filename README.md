@@ -11,4 +11,4 @@ Make sure to install Flask in a new browser profile or disable any existing inst
 
 ## Intro
 
-<img src="src/Intro.gif">
+<img src="./images/Intro.gif">
