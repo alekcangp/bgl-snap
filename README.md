@@ -1,5 +1,5 @@
 
-#Bitgesell Snap enables MetaMask users to interact with the Bitgesell Blockchain.
+##Bitgesell Snap enables MetaMask users to interact with the Bitgesell Blockchain.
 
 A Bitgesell wallet inside MetaMask using Snap.
 
@@ -11,6 +11,6 @@ MetaMask Flask is currently only available as a desktop browser extension for Ch
 
 Make sure to install Flask in a new browser profile or disable any existing installed versions of MetaMask. Running multiple instances of MetaMask in the same browser profile will break dapp interactions.
 
-#Intro
+##Intro
 
-<img src="/src/Intro.gif">
+<img src="src/Intro.gif">
