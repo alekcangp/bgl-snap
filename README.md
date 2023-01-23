@@ -3,7 +3,7 @@
 
 snap.bglnode.online domain is linked to GitHub Pages https://alekcangp.github.io/bgl-snap.
 
-Bitgesell in a list of awesome MetaMask Snaps related resources https://github.com/piotr-roslaniec/awesome-metamask-snaps
+Bitgesell in a list of awesome MetaMask Snaps related resources https://github.com/piotr-roslaniec/awesome-metamask-snaps.
 
 MetaMask Flask is currently only available as a desktop browser extension for Chrome and Firefox.
 
