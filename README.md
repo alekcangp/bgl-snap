@@ -1,5 +1,5 @@
 
-## A Bitgesell wallet inside MetaMask using Snap..
+## A Bitgesell wallet inside MetaMask using Snap.
 
 snap.bglnode.online domain is linked to GitHub Pages https://alekcangp.github.io/bgl-snap.
 
