@@ -1,6 +1,15 @@
 
 ## A Bitgesell wallet inside MetaMask using Snap.
 
+
+**Advatages:**
+
++ One account for EVM and Bitgesell blockchain.
++ Three Node RPC endpoint.
++ Spend unconfirmed change.
++ Using native BGL coin in dApp.
+
+
 snap.bglnode.online domain is linked to GitHub Pages https://alekcangp.github.io/bgl-snap.
 
 Bitgesell in a list of awesome MetaMask Snaps related resources https://github.com/piotr-roslaniec/awesome-metamask-snaps.
