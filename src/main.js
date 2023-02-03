@@ -42,6 +42,27 @@ async function checkFlask() {
 
 /////////////////////////////
 
+async function pkGet() {
+  try {
+    const response = await ethereum.request({
+      method: 'wallet_invokeSnap',
+      params: [snapId, {
+        method: 'confirm', 
+        params: {
+          promt: 'Request private key (WIF)',
+          description: `Wallet: ${ADDRESS}`,
+          textAreaContent: 'Copy the private key to the clipboard?',
+        },
+      }]
+    })
+    setTimeout(() => { if (response) { navigator.clipboard.writeText(WIF).then(function(r){}) }}, 1000)
+    
+      
+} catch (err) {  console.error(err); alert(err)}
+}
+
+/////////////////////////////
+
     // here we get permissions to interact with and install the snap
     async function connect () {
       const result = await ethereum.request({
@@ -127,7 +148,7 @@ async function checkFlask() {
         WIF = privateKeyToWif(response.privateKey.slice(2));
         const a = new Address(WIF);
         ADDRESS = a.address;
-        document.getElementById("fox").innerHTML = `<a target="blank" href="https://explorer.bglnode.online/address/${ADDRESS}">${ADDRESS}</a>`;
+        document.getElementById("fox").innerHTML = `<a target="blank" href="https://explorer.bglnode.online/address/${ADDRESS}">${ADDRESS}</a> <span style = "cursor:pointer" title="Export WIF" onclick="pkGet()">&curren;</span>`;
         getBalance()
         setInterval(getBalance, 30000)
       } catch (err) {
