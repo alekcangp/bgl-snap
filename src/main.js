@@ -1,4 +1,4 @@
-//checkFlask();
+checkFlask();
 async function checkFlask() {
     try { 
       const result = await ethereum.request({
